@@ -2,6 +2,7 @@ import express from 'express';
 import {
 	getBooking,
 	getCurrency,
+	getCurrencyList,
 	getGuest,
 	getReview,
 	getTransaction
@@ -31,6 +32,7 @@ const routerApi = express.Router();
 // mock data
 routerApi.get('/v1/booking', getBooking);
 routerApi.get('/v1/currency', getCurrency);
+routerApi.get('/v1/currencyList', getCurrencyList);
 routerApi.get('/v1/guest', getGuest);
 routerApi.get('/v1/review', getReview);
 routerApi.get('/v1/transaction', getTransaction);

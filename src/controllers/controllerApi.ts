@@ -4,6 +4,7 @@ import mockCurrency from '../assets/mockCurrency.json';
 import mockGuest from '../assets/mockGuest.json';
 import mockReview from '../assets/mockReview.json';
 import mockTransaction from '../assets/mockTransaction.json';
+import { currencyList } from '../../services/currency.service';
 
 const getBooking = (req: Request, res: Response, next: NextFunction) => {
 	return res.json(mockBooking);
@@ -11,6 +12,11 @@ const getBooking = (req: Request, res: Response, next: NextFunction) => {
 
 const getCurrency = (req: Request, res: Response, next: NextFunction) => {
 	return res.json(mockCurrency);
+};
+
+const getCurrencyList = (req: Request, res: Response, next: NextFunction) => {
+	const result = currencyList('');
+	return res.json(result);
 };
 
 const getGuest = (req: Request, res: Response, next: NextFunction) => {
@@ -25,4 +31,11 @@ const getTransaction = (req: Request, res: Response, next: NextFunction) => {
 	return res.json(mockTransaction);
 };
 
-export { getBooking, getCurrency, getGuest, getReview, getTransaction };
+export {
+	getBooking,
+	getCurrency,
+	getGuest,
+	getReview,
+	getTransaction,
+	getCurrencyList
+};
